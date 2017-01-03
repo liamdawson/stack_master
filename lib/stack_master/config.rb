@@ -1,5 +1,5 @@
 require 'deep_merge/rails_compat'
-require 'active_support/core_ext/object/deep_dup'
+require 'monkey_patches/hash'
 
 module StackMaster
   class Config

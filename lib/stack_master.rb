@@ -2,7 +2,8 @@ require "commander"
 require "yaml"
 require "aws-sdk"
 require "colorize"
-require 'active_support/core_ext/string'
+require 'monkey_patches/string'
+require 'monkey_patches/object'
 
 module StackMaster
   extend self
