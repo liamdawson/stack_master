@@ -48,8 +48,8 @@ module StackMaster
 
     def filter(region = nil, stack_name = nil)
       @stacks.select do |s|
-        (region.empty? || s.region == region || s.region == region.gsub('_', '-')) &&
-          (stack_name.empty? || s.stack_name == stack_name || s.stack_name == stack_name.gsub('_', '-'))
+        (region.nil? || region.empty? || s.region == region || s.region == region.gsub('_', '-')) &&
+          (stack_name.nil? || stack_name.empty? || s.stack_name == stack_name || s.stack_name == stack_name.gsub('_', '-'))
       end
     end
 
