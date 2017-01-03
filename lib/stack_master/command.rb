@@ -2,7 +2,7 @@ module StackMaster
   module Command
     def self.included(base)
       base.extend ClassMethods
-      base.prepend Perform
+      base.send :prepend, Perform
     end
 
     module ClassMethods
