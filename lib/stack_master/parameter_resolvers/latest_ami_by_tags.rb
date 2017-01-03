@@ -11,7 +11,8 @@ module StackMaster
 
       def resolve(value)
         filters = @ami_finder.build_filters_from_string(value, prefix = "tag")
-        @ami_finder.find_latest_ami(filters).try(:image_id)
+        latest_ami = @ami_finder.find_latest_ami(filters)
+        latest_ami.nil? ? nil : latest_ami.image_id
       end
     end
   end
